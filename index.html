@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Shuffle through 1,000 original romance lines for text-on-screen posts.">
+<meta name="theme-color" content="#EAE8E9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#131218" media="(prefers-color-scheme: dark)">
 <title>Text on Screen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +80,7 @@ body{
   color:var(--ink);
   font-family:var(--sans);
   -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
   display:flex;
   flex-direction:column;
   position:relative;
@@ -153,6 +162,7 @@ button{
   border-radius:999px;
   padding:12px 26px;
   cursor:pointer;
+  touch-action:manipulation;
   transition:background .15s,border-color .15s,transform .08s,opacity .15s;
 }
 button:hover{background:var(--surface-2)}
@@ -191,10 +201,16 @@ button[disabled]:hover{background:var(--surface)}
 }
 @media (max-width:600px){
   .wordmark{padding:20px 20px 0}
-  main{gap:32px;padding:36px 20px 56px}
-  .line{max-width:14ch}
+  main{gap:30px;padding:32px 20px 52px}
+  .line{max-width:20ch;font-size:clamp(1.625rem,6.4vw,2.125rem)}
+  button{padding:14px 24px}
+  #shuffle{padding-inline:30px}
+  .controls{gap:8px}
 }
 </style>
+
+</head>
+<body>
 
 <p class="wordmark">Text on <em>Screen</em></p>
 
@@ -307,3 +323,6 @@ const BANK=[[0,"They're asleep next to me and I still miss them. Nobody warns yo
   lineEl.classList.remove("swap");
 })();
 </script>
+
+</body>
+</html>
